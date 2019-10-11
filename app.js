@@ -1,3 +1,5 @@
+let path = require('path');
+
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -12,6 +14,8 @@ app.listen(8080);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/", express.static(path.join(__dirname, "dist/movieAng")));
+
 
 mongoose.connect('mongodb://localhost:27017/movies', { useNewUrlParser: true, useUnifiedTopology: true } ,function (err) {
     if (err) {
@@ -32,7 +36,6 @@ app.delete('/actors/:id', actors.deleteOne);
 app.delete('/actors/:id/movies', actors.deleteOneWithMovie)
 app.delete('/actores/:id/:movieid', actors.deleteMovie)
 app.delete('/actors/:id/:movieid', actors.deleteMovie)
-app.delete('/youngeractors/', actors.deleteYoungerThan15)
 
 
 //Movie RESTFul  endpoints
@@ -44,4 +47,5 @@ app.post('/movies/:id/actors', movies.addActor);
 app.delete('/movies/:id', movies.deleteOne);
 app.delete('/movies/:id/:actorid', movies.deleteActor)
 
-app.get('/movies/:year1/:year2', movies.getYearBetween)
+
+app.use("*", express.static(path.join(__dirname, "dist/movieAng")));
