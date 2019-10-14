@@ -9,7 +9,7 @@ const movies = require('./routers/movie');
 
 const app = express();
 
-app.listen(8080);
+app.listen(80);
 
 
 app.use(bodyParser.json());
