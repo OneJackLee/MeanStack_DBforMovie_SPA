@@ -15,6 +15,7 @@ import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ListmoviesComponent } from './listmovies/listmovies.component';
 import { AddactortomovieComponent } from './addactortomovie/addactortomovie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { Listafter1980Component } from './listafter1980/listafter1980.component';
 
 const appRoutes: Routes = [
   { path: "listactors", component: ListactorsComponent },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: "addmovie", component: AddmovieComponent },
   { path: "addactortomovie", component: AddactortomovieComponent },
   { path: "deletemovie", component: DeletemovieComponent },
+  { path: "getActorAfter1980", component: Listafter1980Component },
   { path: "", redirectTo: "/listactors", pathMatch: "full" },
   { path: "**", component: NotfoundComponent},
   
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
     ListmoviesComponent,
     AddactortomovieComponent,
     NotfoundComponent,
+    Listafter1980Component,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,11 @@ export class DatabaseService {
   getActors() {
     return this.http.get("/actors");
   }
+
+  getActorsAfter1980() {
+    return this.http.get("/actors/get/after1980");
+  }
+
   getActor(id: string) {
     let url = "/actors/" + id;
     return this.http.get(url);

@@ -137,6 +137,14 @@ module.exports = {
         });
     },
 
+    getAfter1980 : function(req, res){
+        let query = {'bYear': {$gte: 1980}}
+        Actor.find(query).exec(function(err, actors){
+            if (err) return res.status(400).json(err);
+            res.json(actors);
+        })
+    },
+
     deleteYoungerThan15 : function(req, res) {
         // let currentYear = new Date().getFullYear();
         var curYear = new Date().getFullYear();

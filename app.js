@@ -37,6 +37,8 @@ app.delete('/actors/:id/movies', actors.deleteOneWithMovie)
 app.delete('/actores/:id/:movieid', actors.deleteMovie)
 app.delete('/actors/:id/:movieid', actors.deleteMovie)
 
+app.get('/actors/get/after1980', actors.getAfter1980);
+
 
 //Movie RESTFul  endpoints
 app.get('/movies', movies.getAll);

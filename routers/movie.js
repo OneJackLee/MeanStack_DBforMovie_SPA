@@ -85,6 +85,7 @@ module.exports = {
 
     },
 
+
     addActor: function(req, res){
         Movie.findOne({ _id: req.params.id }, function (err, movie) {
             if (err) return res.status(400).json(err);
@@ -101,6 +102,7 @@ module.exports = {
                 });
             })
         });
+    
         // Actor.findOne({ _id: req.params.id }, function (err, actor) {
         //     if (err) return res.status(400).json(err);
         //     if (!actor) return res.status(404).json();
